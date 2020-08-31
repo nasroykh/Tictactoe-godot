@@ -1,0 +1,180 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TicTacToe.gd" type="Script" id=1]
+[ext_resource path="res://Frame 4.png" type="Texture" id=2]
+[ext_resource path="res://gfx/IndieFlower-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="TicTacToe" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlobalContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="GlobalContainer"]
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 20, 20 )
+custom_fonts/font = SubResource( 1 )
+text = "TIC TAC TOE !"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row1" type="HBoxContainer" parent="GlobalContainer"]
+margin_top = 140.0
+margin_right = 1024.0
+margin_bottom = 240.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="TextureButton" parent="GlobalContainer/Row1"]
+margin_left = 352.0
+margin_right = 452.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="TextureButton" parent="GlobalContainer/Row1"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+
+[node name="Button3" type="TextureButton" parent="GlobalContainer/Row1"]
+margin_left = 572.0
+margin_right = 672.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+
+[node name="Row2" type="HBoxContainer" parent="GlobalContainer"]
+margin_top = 250.0
+margin_right = 1024.0
+margin_bottom = 350.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="TextureButton" parent="GlobalContainer/Row2"]
+margin_left = 352.0
+margin_right = 452.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="TextureButton" parent="GlobalContainer/Row2"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+
+[node name="Button6" type="TextureButton" parent="GlobalContainer/Row2"]
+margin_left = 572.0
+margin_right = 672.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+
+[node name="Row3" type="HBoxContainer" parent="GlobalContainer"]
+margin_top = 360.0
+margin_right = 1024.0
+margin_bottom = 460.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="TextureButton" parent="GlobalContainer/Row3"]
+margin_left = 352.0
+margin_right = 452.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button8" type="TextureButton" parent="GlobalContainer/Row3"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+
+[node name="Button9" type="TextureButton" parent="GlobalContainer/Row3"]
+margin_left = 572.0
+margin_right = 672.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+
+[node name="Winner" type="Label" parent="GlobalContainer"]
+margin_top = 470.0
+margin_right = 1024.0
+margin_bottom = 544.0
+rect_min_size = Vector2( 20, 20 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Replay" type="Button" parent="GlobalContainer"]
+visible = false
+margin_left = 437.0
+margin_top = 524.0
+margin_right = 587.0
+margin_bottom = 574.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 4
+text = "Replay ?"
+[connection signal="pressed" from="GlobalContainer/Row1/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row1/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row1/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row2/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row2/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row2/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row3/Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row3/Button8" to="." method="_on_Button8_pressed"]
+[connection signal="pressed" from="GlobalContainer/Row3/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="GlobalContainer/Replay" to="." method="_on_Replay_pressed"]
